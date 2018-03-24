@@ -25,17 +25,12 @@ function replaceRandomWord(textContent) {
 const iterator = document.createNodeIterator(
   document.body,
   NodeFilter.SHOW_TEXT,
-  node => {
-    if (Math.random() > probability) {
-      return NodeFilter.FILTER_REJECT;
-    }
-
-    if (/^\s*$/.test(node.data)) {
-      return NodeFilter.FILTER_REJECT;
-    }
-
-    return NodeFilter.FILTER_ACCEPT;
-  }
+  node =>
+    Math.random() > probability
+      ? NodeFilter.FILTER_REJECT
+      : /^\s*$/.test(node.data)
+        ? NodeFilter.FILTER_REJECT
+        : NodeFilter.FILTER_ACCEPT
 );
 
 let currentNode;
