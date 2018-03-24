@@ -1,7 +1,17 @@
 const probability = 0.1;
 
-function replaceRandomWord(node) {
-  const words = node.textContent.split(/\W+/).filter(w => w.length > 3);
+function isLexicalWord(word) {
+  // TODO: Obviously need a better check than this
+  return word.length > 3;
+}
+
+function getReplacementWord(word) {
+  const match = word.match(/\w+(ing|er|ed|s)$/);
+  return match ? '****' + match[1] : '****';
+}
+
+function replaceRandomWord(textContent) {
+  const words = textContent.split(/\W+/).filter(isLexicalWord);
 
   if (!words.length) {
     return;
@@ -9,7 +19,7 @@ function replaceRandomWord(node) {
 
   const toReplace = words[Math.floor(Math.random() * words.length)];
 
-  node.textContent = node.textContent.replace(toReplace, '****');
+  return textContent.replace(toReplace, getReplacementWord(toReplace));
 }
 
 const iterator = document.createNodeIterator(
@@ -31,5 +41,5 @@ const iterator = document.createNodeIterator(
 let currentNode;
 
 while ((currentNode = iterator.nextNode())) {
-  replaceRandomWord(currentNode);
+  currentNode.textContent = replaceRandomWord(currentNode.textContent);
 }
