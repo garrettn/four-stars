@@ -1,0 +1,14 @@
+{
+  "name": "tuf",
+  "version": "1.0.0",
+  "description": "The Unnecessary Filter",
+  "author": "Garrett Nay <g@garrettnay.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "prettier": "1.11.1"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
