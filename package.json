@@ -5,22 +5,35 @@
   "author": "Garrett Nay <g@garrettnay.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "webpack --mode=production"
+  },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
-    "prettier": "1.11.1"
+    "prettier": "1.11.1",
+    "webpack-cli": "^2.0.13"
   },
   "prettier": {
     "singleQuote": true
   },
   "eslintConfig": {
-    "extends": ["eslint:recommended", "prettier"],
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
     "parserOptions": {
       "ecmaVersion": 6
     },
     "env": {
       "browser": true,
+      "node": true,
       "webextensions": true
     }
+  },
+  "dependencies": {
+    "webpack": "^4.4.1"
   }
 }
