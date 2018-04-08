@@ -1,4 +1,4 @@
-const probability = 0.1;
+const probability = 0;
 
 function isLexicalWord(word) {
   // TODO: Obviously need a better check than this

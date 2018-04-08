@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Options | The Unnecessary Filter</title>
+</head>
+<body>
+  <form>
+    <label>
+      Probability:
+      <input type="number" min="0" max="100">%
+    </label>
+    <fieldset>
+      <legend>Blacklist/Whitelist</legend>
+      <label>
+        <input type="radio" name="listtype" value="enable">
+        Disable on the following URLs
+      </label>
+      <label>
+        <input type="radio" name="listtype" value="disable">
+        Enable <strong>only</strong> on the following URLs
+      </label>
+      <textarea id="urls" name="urls" cols="30" rows="10"></textarea>
+    </fieldset>
+    <button type="submit" class="default">Save</button>
+    <button>Restore Defaults</button>
+  </form>
+</body>
+</html>
