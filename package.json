@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "start": "webpack --mode=development -w"
   },
   "dependencies": {},
   "devDependencies": {
