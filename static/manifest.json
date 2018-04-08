@@ -3,10 +3,9 @@
   "name": "The Unnecessary Filter",
   "version": "1.0.0",
   "description": "Keep the web clean, possibly.",
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "js": ["content-script.js"]
-    }
-  ]
+  "permissions": ["<all_urls>"],
+  "background": {
+    "scripts": ["background.js"]
+  }
 }
+
