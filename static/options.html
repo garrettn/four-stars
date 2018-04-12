@@ -8,16 +8,16 @@
   <form>
     <label>
       Probability:
-      <input type="number" min="0" max="100">%
+      <input type="number" id="probability" name="probability" min="0" max="100">%
     </label>
     <fieldset>
       <legend>Blacklist/Whitelist</legend>
       <label>
-        <input type="radio" name="listtype" value="enable">
+        <input type="radio" id="list-disable" name="listtype" value="disable">
         Disable on the following URLs
       </label>
       <label>
-        <input type="radio" name="listtype" value="disable">
+        <input type="radio" id="list-enable" name="listtype" value="enable">
         Enable <strong>only</strong> on the following URLs
       </label>
       <textarea id="urls" name="urls" cols="30" rows="10"></textarea>
@@ -25,5 +25,6 @@
     <button type="submit" class="default">Save</button>
     <button>Restore Defaults</button>
   </form>
+  <script src="options.js"></script>
 </body>
 </html>

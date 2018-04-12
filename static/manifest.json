@@ -3,7 +3,7 @@
   "name": "The Unnecessary Filter",
   "version": "1.0.0",
   "description": "Keep the web clean, possibly.",
-  "permissions": ["<all_urls>"],
+  "permissions": ["<all_urls>", "storage"],
   "background": {
     "scripts": ["background.js"]
   },
