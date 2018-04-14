@@ -17,11 +17,11 @@ function rehydrate(options) {
 
 function handleSubmit(e) {
   e.preventDefault();
-  const { elements } = e.target;
+  const { elements: { probability, listtype, urls } } = e.target;
   const results = {
-    probability: parseInt(elements.probability.value),
-    listType: elements.listtype.value,
-    urls: elements.urls.value.split(/[\s,]+/)
+    probability: parseInt(probability.value),
+    listType: listtype.value,
+    urls: urls.value.length > 0 ? urls.value.trim().split(/[\s,]+/) : []
   };
   browser.storage.local.set(results);
 }
