@@ -3,24 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Options | The Unnecessary Filter</title>
+  <style>
+    fieldset {
+      margin-bottom: 1em;
+    }
+
+    label, textarea {
+      display: block;
+    }
+
+    textarea {
+      margin-top: 1em;
+      width: 100%;
+      resize: none;
+    }
+
+    .label-probability {
+      display: flex;
+      align-items: center;
+      font-size: 2em;
+    }
+
+    #probability {
+      width: 5ch;
+      font-size: inherit;
+      text-align: right;
+    }
+
+  </style>
 </head>
 <body>
   <form>
-    <label>
-      Probability:
-      <input type="number" id="probability" name="probability" min="0" max="100">%
-    </label>
+    <fieldset>
+      <legend>Probability</legend>
+      <label class="label-probability">
+        <input type="number" id="probability" name="probability" min="0" max="100">
+        %
+      </label>
+      <p>
+        Represents the probability that any given <em>text node</em> will have a replacement.
+        Text nodes can vary in size, from a single character to multiple paragraphs, depending
+        on how the HTML was authored.
+      </p>
+    </fieldset>
     <fieldset>
       <legend>Blacklist/Whitelist</legend>
       <label>
         <input type="radio" id="list-disable" name="listtype" value="disable">
-        Disable on the following URLs
+        Disable on the following domains
       </label>
       <label>
         <input type="radio" id="list-enable" name="listtype" value="enable">
-        Enable <strong>only</strong> on the following URLs
+        Enable <strong>only</strong> on the following domains
       </label>
       <textarea id="urls" name="urls" cols="30" rows="10"></textarea>
+      <p>
+        Separate by commas or on separate lines.
+      </p>
     </fieldset>
     <button type="submit" class="default">Save</button>
     <button id="restore">Restore Defaults</button>
