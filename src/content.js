@@ -1,5 +1,3 @@
-const probability = 0;
-
 function isLexicalWord(word) {
   // TODO: Obviously need a better check than this
   return word.length > 3;
@@ -22,19 +20,23 @@ function replaceRandomWord(textContent) {
   return textContent.replace(toReplace, getReplacementWord(toReplace));
 }
 
-const iterator = document.createNodeIterator(
-  document.body,
-  NodeFilter.SHOW_TEXT,
-  node =>
-    Math.random() > probability
-      ? NodeFilter.FILTER_REJECT
-      : /^\s*$/.test(node.data)
+function traverseAndReplace({ probability }) {
+  const iterator = document.createNodeIterator(
+    document.body,
+    NodeFilter.SHOW_TEXT,
+    node =>
+      Math.random() > probability / 100
         ? NodeFilter.FILTER_REJECT
-        : NodeFilter.FILTER_ACCEPT
-);
+        : /^\s*$/.test(node.data)
+          ? NodeFilter.FILTER_REJECT
+          : NodeFilter.FILTER_ACCEPT
+  );
 
-let currentNode;
+  let currentNode;
 
-while ((currentNode = iterator.nextNode())) {
-  currentNode.textContent = replaceRandomWord(currentNode.textContent);
+  while ((currentNode = iterator.nextNode())) {
+    currentNode.textContent = replaceRandomWord(currentNode.textContent);
+  }
 }
+
+browser.storage.local.get('probability').then(traverseAndReplace);
