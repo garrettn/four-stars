@@ -26,9 +26,16 @@ function handleSubmit(e) {
   browser.storage.local.set(results);
 }
 
+function restoreDefaults() {
+  browser.storage.local
+    .set(defaultOptions)
+    .then(() => rehydrate(defaultOptions));
+}
+
 function init() {
   browser.storage.local.get().then(rehydrate);
   document.querySelector('form').addEventListener('submit', handleSubmit);
+  document.querySelector('#restore').addEventListener('click', restoreDefaults);
 }
 
 document.addEventListener('DOMContentLoaded', init);
