@@ -1,7 +1,7 @@
 {
-  "name": "tuf",
+  "name": "four-stars",
   "version": "1.0.0",
-  "description": "The Unnecessary Filter",
+  "description": "The unnecessary filter",
   "author": "Garrett Nay <g@garrettnay.com>",
   "license": "MIT",
   "private": true,
