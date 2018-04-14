@@ -9,7 +9,9 @@
     "build": "webpack --mode=production",
     "start": "webpack --mode=development -w"
   },
-  "dependencies": {},
+  "dependencies": {
+    "wink-nlp-utils": "^1.8.0"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",

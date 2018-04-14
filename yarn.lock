@@ -4816,6 +4816,21 @@ wide-align@^1.1.0:
   dependencies:
     string-width "^1.0.2"
 
+wink-helpers@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/wink-helpers/-/wink-helpers-1.3.0.tgz#791734292bfca64c55ec26484b2e81834996fa5d"
+
+wink-nlp-utils@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/wink-nlp-utils/-/wink-nlp-utils-1.8.0.tgz#3ab193fd30f778d8ba49bf2c569291df1fab40cd"
+  dependencies:
+    wink-helpers "^1.3.0"
+    wink-porter2-stemmer "^1.0.8"
+
+wink-porter2-stemmer@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/wink-porter2-stemmer/-/wink-porter2-stemmer-1.0.8.tgz#66f156a184f6895ee994d7d942914198cb2c1a8f"
+
 wordwrap@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"

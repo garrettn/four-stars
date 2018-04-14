@@ -1,15 +1,14 @@
-function isLexicalWord(word) {
-  // TODO: Obviously need a better check than this
-  return word.length > 3;
-}
+import { string, tokens } from 'wink-nlp-utils';
 
 function getReplacementWord(word) {
-  const match = word.match(/\w+(ing|er|ed|s)$/);
-  return match ? '****' + match[1] : '****';
+  const stem = string.stem(word);
+  // Using slice instead of replace because the extracted stem
+  // might not match the case of the original word
+  return '****' + word.slice(stem.length);
 }
 
 function replaceRandomWord(textContent) {
-  const words = textContent.split(/\W+/).filter(isLexicalWord);
+  const words = tokens.removeWords(string.tokenize0(textContent));
 
   if (!words.length) {
     return;
