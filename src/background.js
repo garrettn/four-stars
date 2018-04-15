@@ -5,7 +5,7 @@ async function registerScript(prefs) {
     registered.unregister();
   }
 
-  const urls = prefs.urls.map(domain => `*://*.${domain}/*`);
+  const urls = (prefs.urls || []).map(domain => `*://*.${domain}/*`);
   const matches =
     prefs.listType === 'enable' && urls.length > 0 ? urls : ['*://*/*'];
   const config = {
