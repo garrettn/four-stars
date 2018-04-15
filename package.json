@@ -1,7 +1,7 @@
 {
   "name": "four-stars",
   "version": "1.0.0",
-  "description": "The unnecessary filter",
+  "description": "An unnecessary filter for your browser.",
   "author": "Garrett Nay <g@garrettnay.com>",
   "license": "MIT",
   "private": true,
