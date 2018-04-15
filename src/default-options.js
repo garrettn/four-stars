@@ -1,5 +1,5 @@
 export default {
-  probability: 15,
+  probability: 5,
   listType: 'disable',
   urls: []
 };
