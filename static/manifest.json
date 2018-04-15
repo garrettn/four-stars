@@ -3,6 +3,10 @@
   "name": "Four Stars",
   "version": "1.0.0",
   "description": "An unnecessary filter for your browser.",
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg"
+  },
   "permissions": ["<all_urls>", "storage"],
   "background": {
     "scripts": ["background.js"]
